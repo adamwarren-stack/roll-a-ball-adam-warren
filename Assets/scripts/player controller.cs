@@ -1,12 +1,15 @@
 using UnityEngine;
-using UnityEngine. InputSystem;
+using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
-    private RigidBody rb;
+    private Rigidbody rb;
+    private float MovementX;
+    private float MovementY;
+    public float speed = 100000000000;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponet<RigidBody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -17,9 +20,13 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue MovementValue)
     {
         Vector2 MovementVector = MovementValue.Get<Vector2>(); 
+        MovementX = MovementVector.x;
+        MovementY = MovementVector.y;
+
     }
-    private void Fixedupdate()
+    private void FixedUpdate()
     {
-        rb.AddForce(Movement);
+        Vector3 movement = new Vector3 (MovementX, 0.0f, MovementY);
+        rb.AddForce(movement*speed);
     }
 }

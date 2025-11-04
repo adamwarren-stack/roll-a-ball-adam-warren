@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine. InputSystem;
 
-public class playercontroller : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,5 +13,4 @@ public class playercontroller : MonoBehaviour
     {
         
     }
-    void OnMove(InputValue movementvalue)
 }
