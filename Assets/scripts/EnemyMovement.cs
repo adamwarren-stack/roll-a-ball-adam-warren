@@ -26,4 +26,11 @@ public class EnemyMovement : MonoBehaviour
             navMeshAgent.SetDestination(player.position);
         }
     }
+      private void OnCollisionEnter(Collision collision)
+    {
+     if (collision.gameObject.CompareTag("teliport"))
+     {
+       transform.position =  new Vector3 (-player.position.x, 0.0f, -player.position.y);
+     }
+    }
 }
