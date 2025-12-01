@@ -41,12 +41,19 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
-        }
+        }       
+ if (other.gameObject.CompareTag("speed")) 
+    {
+        other.gameObject.SetActive(false);
+        speed += 5;
     }
+    }
+}
+
  void SetCountText() 
     {
         countText.text = "Count: " + count.ToString();
- if (count >= 12)
+ if (count >= 20)
         {
             Destroy(GameObject.FindGameObjectWithTag("Enemy"));
             winTextObject.SetActive(true);
@@ -62,5 +69,4 @@ public class PlayerController : MonoBehaviour
        winTextObject.gameObject.SetActive(true);
        winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
    }
-}
 }
