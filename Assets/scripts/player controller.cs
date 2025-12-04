@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         speed += 5;
     }
     }
-}
+
 
  void SetCountText() 
     {
@@ -59,7 +59,8 @@ public class PlayerController : MonoBehaviour
             winTextObject.SetActive(true);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    
+    void OnCollisionEnter(Collision collision)
 {
    if (collision.gameObject.CompareTag("Enemy"))
    {
@@ -69,4 +70,5 @@ public class PlayerController : MonoBehaviour
        winTextObject.gameObject.SetActive(true);
        winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
    }
+}
 }
