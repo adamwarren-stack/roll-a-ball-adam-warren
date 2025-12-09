@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
     {
      if (other.gameObject.CompareTag("teliport"))
      {
-       transform.position =  new Vector3 (0, 1, 0);
+       transform.position =  new Vector3 (0, 0, 0);
       
      }
     }
